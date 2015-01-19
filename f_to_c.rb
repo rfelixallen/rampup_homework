@@ -1,5 +1,5 @@
 # convert fahrenheit to celsius.
-def fahrenheit_to_celsius (fahrenheit)
+def fahrenheit_to_celsius
 	puts "Hello World"
 end
 
