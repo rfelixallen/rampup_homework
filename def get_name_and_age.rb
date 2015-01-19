@@ -6,7 +6,7 @@ def get_name_and_age
 	age = gets.chomp
 
 	puts "How is this multiplied?"
-	puts name * age.to_i
+	name * age
 end
 
 get_name_and_age
