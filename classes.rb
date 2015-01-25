@@ -1,6 +1,6 @@
 class Animal
-	def set_noise
-		@noise = "Moo!"
+	def set_noise(noise)
+		@noise = noise
 	end
 
 	def make_noise
