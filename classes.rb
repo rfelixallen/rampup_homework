@@ -6,6 +6,16 @@ class Animal
 	attr_writer :color
 	attr_reader :legs, :arms
 
+	def self.all_species # Class method
+		['cat', 'dog', 'cow', 'horse']
+	end
+
+	def self.create_with_attributes(noise, color)
+		animal = self.new(noise)
+		animal.color = color
+		return animal
+	end
+
 	def initialize(noise, legs=4, arms=0)
 		@noise = noise
 		@legs = legs
@@ -32,6 +42,10 @@ class Animal
 	end
 end
 #new can pass values into initalize. below, new(noise, legs, arms)
+# new is a class method, and can be called without any instances.
+
+puts Animal.all_species.inspect
+
 cow = Animal.new("Moo!", 4, 0)
 puts cow.noise
 puts cow.legs
@@ -39,9 +53,6 @@ puts cow.arms
 cow.color = "Black and White"
 puts cow.color
 
-horse = Animal.new("Neigh!", 4, 0)
-puts horse.noise
-puts horse.legs
-puts horse.arms
-horse.color = "Brown"
-puts horse.color
+animal2 = Animal.create_with_attributes("Quack!", "white")
+puts animal2.noise
+puts animal2.color
