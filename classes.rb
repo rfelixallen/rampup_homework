@@ -10,8 +10,9 @@ class Animal
 end
 
 cow = Animal.new
-cow.set_noise
+cow.set_noise("Moo!")
 puts cow.make_noise
 
 horse = Animal.new
+horse.set_noise("Neigh!")
 puts horse.make_noise
