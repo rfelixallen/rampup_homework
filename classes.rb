@@ -6,11 +6,13 @@ class Animal
 	attr_writer :color
 	attr_reader :legs, :arms
 
-def initialize(noise, legs, arms)
-	@noise = noise
-	@legs = legs
-	@arms = arms
-	puts "A new animal has been instatiated."
+	def initialize(noise, legs=4, arms=0)
+		@noise = noise
+		@legs = legs
+		@arms = arms
+		puts "A new animal has been instatiated."
+
+	end
 
 	#attr_writer :noise
 # attr_writer is the same as the following code
@@ -26,14 +28,20 @@ def initialize(noise, legs, arms)
 	end
 
 	def color
-		"The color is #{@color}".
+		"The color is #{@color}."
+	end
 end
-
 #new can pass values into initalize. below, new(noise, legs, arms)
 cow = Animal.new("Moo!", 4, 0)
-cow.noise = "Moo!"
 puts cow.noise
+puts cow.legs
+puts cow.arms
+cow.color = "Black and White"
+puts cow.color
 
-horse = Animal.new
-horse.noise = "Neigh!"
+horse = Animal.new("Neigh!", 4, 0)
 puts horse.noise
+puts horse.legs
+puts horse.arms
+horse.color = "Brown"
+puts horse.color
