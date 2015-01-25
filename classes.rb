@@ -6,8 +6,12 @@ class Animal
 	attr_writer :color
 	attr_reader :legs, :arms
 
+	# species is initalized when class Animal is read in. no need for self.initialize
+	@@species = ['cat', 'dog', 'cow', 'horse']
+
+
 	def self.all_species # Class method
-		['cat', 'dog', 'cow', 'horse']
+		@@species
 	end
 
 	def self.create_with_attributes(noise, color)
