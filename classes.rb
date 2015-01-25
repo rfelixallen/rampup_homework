@@ -8,6 +8,7 @@ class Animal
 
 	# species is initalized when class Animal is read in. no need for self.initialize
 	@@species = ['cat', 'dog', 'cow', 'horse']
+	@@current_animals = []
 
 
 	def self.all_species # Class method
@@ -24,8 +25,8 @@ class Animal
 		@noise = noise
 		@legs = legs
 		@arms = arms
+		@@current_animals << self #the new animal will be added to the current animals array
 		puts "A new animal has been instatiated."
-
 	end
 
 	#attr_writer :noise
@@ -60,3 +61,5 @@ puts cow.color
 animal2 = Animal.create_with_attributes("Quack!", "white")
 puts animal2.noise
 puts animal2.color
+
+puts Animal.current_animals.inspect #return current animals
