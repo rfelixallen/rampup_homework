@@ -69,7 +69,8 @@ end
 
 class Pig < Animal
 	def noise
-		"Hello"
+		#"Hello"
+		super
 	end
 end
 
