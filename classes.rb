@@ -23,6 +23,8 @@ class Animal
 		@@current_animals
 	end
 
+	# no class attr_accessor in ruby. cattr_accessor in rails
+
 	def self.create_with_attributes(noise, color)
 		animal = self.new(noise)
 		animal.color = color
@@ -57,18 +59,24 @@ end
 #new can pass values into initalize. below, new(noise, legs, arms)
 # new is a class method, and can be called without any instances.
 
+class Cow < Animal
+
+end
+
 Animal.species = ['frog', 'fish']
 puts Animal.species.inspect
 
-cow = Animal.new("Moo!", 4, 0)
-puts cow.noise
-puts cow.legs
-puts cow.arms
-cow.color = "Black and White"
-puts cow.color
+animal1 = Animal.new("Moo!", 4, 0)
+puts animal1.noise
+puts animal1.legs
+puts animal1.arms
+animal1.color = "Black and White"
+puts animal1.color
 
 animal2 = Animal.create_with_attributes("Quack!", "white")
 puts animal2.noise
 puts animal2.color
 
 puts Animal.current_animals.inspect #return current animals
+
+maisie = Cow.new("Mwwoo!")
