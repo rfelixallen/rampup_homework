@@ -11,8 +11,16 @@ class Animal
 	@@current_animals = []
 
 
-	def self.all_species # Class method
+	def self.species # Class method
 		@@species
+	end
+
+	def self.species=(array=[])
+		@@species = array
+	end
+
+	def self.current_animals
+		@@current_animals
 	end
 
 	def self.create_with_attributes(noise, color)
@@ -49,7 +57,8 @@ end
 #new can pass values into initalize. below, new(noise, legs, arms)
 # new is a class method, and can be called without any instances.
 
-puts Animal.all_species.inspect
+Animal.species = ['frog', 'fish']
+puts Animal.species.inspect
 
 cow = Animal.new("Moo!", 4, 0)
 puts cow.noise
