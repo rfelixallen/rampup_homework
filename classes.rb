@@ -60,7 +60,17 @@ end
 # new is a class method, and can be called without any instances.
 
 class Cow < Animal
+# Warning. Can only inherit from one class.
+	def color
+		# This overwrite's the class color. Ruby will use the most recent def.
+		"The cow's color is #{@color}."
+	end
+end
 
+class Pig < Animal
+	def noise
+		"Hello"
+	end
 end
 
 Animal.species = ['frog', 'fish']
@@ -79,4 +89,11 @@ puts animal2.color
 
 puts Animal.current_animals.inspect #return current animals
 
-maisie = Cow.new("Mwwoo!")
+maisie = Cow.create_with_attributes("Mwwoo!", "orange")
+puts maisie.noise
+puts animal1.class
+puts maisie.class
+puts maisie.color
+
+wilbur = Pig.new("Oink")
+puts wilbur.noise
